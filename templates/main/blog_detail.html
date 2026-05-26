@@ -1,0 +1,26 @@
+{% extends 'main/base.html' %}
+{% block title %}{{ post.title }} — Devashish Markam{% endblock %}
+{% block content %}
+
+<div class="page-hero">
+  <div class="container" style="max-width:720px;">
+    <div class="section-label">{{ post.created_at|date:"d M Y" }}</div>
+    <h1 style="font-size:clamp(1.6rem,3vw,2.2rem);">{{ post.title }}</h1>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container" style="max-width:720px;">
+    {% if post.cover_image %}
+      <img src="{{ post.cover_image.url }}" alt="{{ post.title }}" style="width:100%; border-radius:12px; margin-bottom:40px;"/>
+    {% endif %}
+    <div style="line-height:1.9; color:var(--body); font-size:1.05rem;">
+      {{ post.content|linebreaks }}
+    </div>
+    <div style="margin-top:48px; padding-top:24px; border-top:1px solid var(--border);">
+      <a href="{% url 'blog' %}" style="color:var(--blue); font-weight:600;">← Back to Blog</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

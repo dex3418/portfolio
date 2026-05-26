@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{% block title %}Devashish Markam{% endblock %}</title>
+  <meta name="description" content="{% block meta_desc %}Embedded Systems & AI Educator, Founder of Novaforge Labs{% endblock %}"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="{% static 'css/main.css' %}"/>
+  {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="{% url 'home' %}" class="nav-logo">DM<span class="dot">.</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="{% url 'home' %}#about">About</a></li>
+      <li><a href="{% url 'projects' %}">Projects</a></li>
+      <li><a href="{% url 'home' %}#skills">Skills</a></li>
+      <li><a href="{% url 'workshops' %}">Workshops</a></li>
+      <li><a href="{% url 'blog' %}">Blog</a></li>
+      <li><a href="{% url 'contact' %}" class="btn-nav">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  {% if messages %}
+    <div class="messages-container">
+      {% for message in messages %}
+        <div class="message message-{{ message.tags }}">{{ message }}</div>
+      {% endfor %}
+    </div>
+  {% endif %}
+  {% block content %}{% endblock %}
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-left">
+      <span class="nav-logo">DM<span class="dot">.</span></span>
+      <p>Embedded Systems & AI Educator<br/>Founder, Novaforge Labs — Chhattisgarh, India</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://linkedin.com/in/devashishmarkam" target="_blank">LinkedIn</a>
+      <a href="https://vouchr-dun.vercel.app/" target="_blank">Vouchr</a>
+      <a href="{% url 'contact' %}">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Devashish Markam. Built with Django.</p>
+  </div>
+</footer>
+
+<script src="{% static 'js/main.js' %}"></script>
+{% block extra_js %}{% endblock %}
+</body>
+</html>

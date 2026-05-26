@@ -1,0 +1,52 @@
+{% extends 'main/base.html' %}
+{% block title %}Workshops — Devashish Markam{% endblock %}
+{% block content %}
+
+<div class="page-hero">
+  <div class="container">
+    <div class="section-label">Training Programs</div>
+    <h1>Workshops</h1>
+    <p>Hands-on programs for colleges, government bodies, and community groups across Chhattisgarh.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    {% if workshops %}
+      <div class="workshops-grid">
+        {% for w in workshops %}
+        <div class="workshop-card">
+          <div class="workshop-title">{{ w.title }}</div>
+          <div class="workshop-meta">
+            <span>⏱ {{ w.duration }}</span>
+            <span>👥 {{ w.audience }}</span>
+          </div>
+          <p class="workshop-desc">{{ w.description }}</p>
+          <ul class="workshop-topics">
+            {% for topic in w.topic_list %}
+              <li>{{ topic }}</li>
+            {% endfor %}
+          </ul>
+          <div class="workshop-price">{{ w.price_range }}</div>
+        </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="workshops-grid">
+        <div class="workshop-card"><div class="workshop-title">Embedded Systems Fundamentals</div><div class="workshop-meta"><span>⏱ 1 Day</span><span>👥 Engineering Students</span></div><p class="workshop-desc">Hands-on intro to microcontrollers, sensors, and real-world hardware projects. Students leave having built a working prototype.</p><ul class="workshop-topics"><li>Arduino & ESP32 basics</li><li>Sensor integration</li><li>Build a working prototype</li><li>Troubleshooting & debugging</li></ul><div class="workshop-price">₹800–1000 per head</div></div>
+        <div class="workshop-card"><div class="workshop-title">AI with Hardware</div><div class="workshop-meta"><span>⏱ 1 Day</span><span>👥 Tech Students</span></div><p class="workshop-desc">Connect AI concepts to physical hardware using Raspberry Pi and Jetson Nano. From model inference to edge deployment.</p><ul class="workshop-topics"><li>Raspberry Pi + Python AI</li><li>Edge AI on Jetson Nano</li><li>Computer vision basics</li><li>Agentic AI intro</li></ul><div class="workshop-price">₹1000–1500 per head</div></div>
+        <div class="workshop-card"><div class="workshop-title">AI for the Workforce</div><div class="workshop-meta"><span>⏱ Half Day</span><span>👥 Government Employees</span></div><p class="workshop-desc">Practical AI fluency for non-technical professionals. Understanding AI tools, applications, and workflow integration.</p><ul class="workshop-topics"><li>What AI actually does</li><li>Tools you can use today</li><li>AI in your workflow</li><li>What's coming next</li></ul><div class="workshop-price">₹1000–1500 per head</div></div>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="container">
+    <h2>Want to bring this workshop to your institution?</h2>
+    <p>50% advance. Outstation bookings welcome. Custom topics available.</p>
+    <a href="{% url 'contact' %}" class="btn btn-white">Book Now</a>
+  </div>
+</section>
+
+{% endblock %}

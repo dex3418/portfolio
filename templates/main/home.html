@@ -1,0 +1,347 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Devashish Markam — Embedded Systems & AI Educator{% endblock %}
+
+{% block content %}
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <div class="hero-tag">Available for Workshops & Collaborations</div>
+      <h1>Building the next generation of <span>tech thinkers</span></h1>
+      <p class="hero-desc">Embedded Systems & AI Educator. Founder of Novaforge Labs. Translating complex hardware and AI into hands-on learning across Chhattisgarh.</p>
+      <div class="hero-btns">
+        <a href="{% url 'workshops' %}" class="btn btn-primary">Book a Workshop</a>
+        <a href="{% url 'projects' %}" class="btn btn-outline">View Projects</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-title">📍 Novaforge Labs — Chhattisgarh, India</div>
+      <div class="stat-grid">
+        <div class="stat">
+          <div class="stat-num">120+</div>
+          <div class="stat-label">Students Trained</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">2+</div>
+          <div class="stat-label">Years Teaching</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">7+</div>
+          <div class="stat-label">Certifications</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">5+</div>
+          <div class="stat-label">Hardware Projects</div>
+        </div>
+      </div>
+      <div class="hero-tags">
+        <span class="tag">Arduino</span>
+        <span class="tag">Raspberry Pi</span>
+        <span class="tag">Agentic AI</span>
+        <span class="tag">LLMs</span>
+        <span class="tag">ESP32</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <div class="about-image-wrap">
+          <div class="about-image-inner">
+            <div class="about-avatar">👨‍💻</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-content">
+        <div class="section-label">About Me</div>
+        <h3>From circuits to classrooms — building real-world tech education</h3>
+        <p>I'm Devashish Markam — a builder, educator, and founder based in Chhattisgarh. I started Novaforge Labs to fill a gap I kept seeing: engineering students who could pass exams but couldn't wire a circuit or train a model.</p>
+        <p>My workshops are hands-on from day one — no slides-only sessions. Students walk in, build something, and leave understanding why it works.</p>
+        <ul class="about-list">
+          <li>Diploma in Electrical Engineering (CSVTU) + B.Sc Biology</li>
+          <li>AWS Certified Machine Learning – Specialty</li>
+          <li>5× Meta Certified (Digital Marketing & Advertising)</li>
+          <li>Founder of Vouchr — hyperlocal talent network, Chhattisgarh</li>
+          <li>Tech Content Creator (Reels & YouTube Shorts)</li>
+        </ul>
+        <a href="{% url 'contact' %}" class="btn btn-primary" style="margin-top:8px;">Get in Touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROJECTS ── -->
+<section class="section section-alt" id="projects">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Work</div>
+      <h2 class="section-title">Featured <span>Projects</span></h2>
+      <p class="section-sub">Hardware builds, AI tools, and community platforms — built from scratch.</p>
+    </div>
+    {% if projects %}
+      <div class="projects-grid">
+        {% for project in projects %}
+        <div class="project-card">
+          <div class="project-img">🔧</div>
+          <div class="project-body">
+            <div class="project-title">{{ project.title }}</div>
+            <p class="project-desc">{{ project.description|truncatewords:20 }}</p>
+            <div class="project-tech">
+              {% for tech in project.tech_list %}
+                <span class="tech-tag">{{ tech }}</span>
+              {% endfor %}
+            </div>
+            {% if project.url %}
+              <a href="{{ project.url }}" target="_blank" class="project-link">View Project →</a>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <!-- Default projects when DB is empty -->
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-img">🚦</div>
+          <div class="project-body">
+            <div class="project-title">Smart Safety Road Management System</div>
+            <p class="project-desc">Real-time sensor-based road alert system with live data processing and automated signaling.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Arduino</span><span class="tech-tag">ESP32</span><span class="tech-tag">Sensors</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-img">⚡</div>
+          <div class="project-body">
+            <div class="project-title">CNC Laser Engraver</div>
+            <p class="project-desc">Microcontroller-based CNC laser engraver designed and built from scratch — full mechanical and firmware implementation.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Microcontroller</span><span class="tech-tag">CNC</span><span class="tech-tag">Firmware</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-img">🌐</div>
+          <div class="project-body">
+            <div class="project-title">Vouchr — Hyperlocal Talent Network</div>
+            <p class="project-desc">Sub-brand of Novaforge Labs. Connecting skill learners, job seekers, and local businesses across Dantewada, Sukma, and Bijapur.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Web</span><span class="tech-tag">Vercel</span><span class="tech-tag">Community</span>
+            </div>
+            <a href="https://vouchr-dun.vercel.app/" target="_blank" class="project-link">Visit Vouchr →</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-img">🤖</div>
+          <div class="project-body">
+            <div class="project-title">AI Reel Script Generator</div>
+            <p class="project-desc">Custom web tool built on promise-payoff psychology framework for short-form content creators — generates full scripts with micro-hook maps.</p>
+            <div class="project-tech">
+              <span class="tech-tag">JavaScript</span><span class="tech-tag">AI</span><span class="tech-tag">Content</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    <div style="text-align:center; margin-top:40px;">
+      <a href="{% url 'projects' %}" class="btn btn-outline">View All Projects</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── SKILLS ── -->
+<section class="section" id="skills">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Expertise</div>
+      <h2 class="section-title">Core <span>Skills</span></h2>
+    </div>
+    {% if skill_categories %}
+      <div class="skills-grid">
+        {% for category, items in skill_categories.items %}
+        <div class="skill-category">
+          <div class="skill-cat-title">{{ category }}</div>
+          <ul class="skill-list">
+            {% for item in items %}
+              <li class="skill-item">{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="skills-grid">
+        <div class="skill-category">
+          <div class="skill-cat-title">Hardware & Embedded</div>
+          <ul class="skill-list">
+            <li class="skill-item">Arduino</li><li class="skill-item">Raspberry Pi</li>
+            <li class="skill-item">Jetson Nano</li><li class="skill-item">ESP32</li>
+            <li class="skill-item">MATLAB</li><li class="skill-item">AutoCAD</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <div class="skill-cat-title">AI & Software</div>
+          <ul class="skill-list">
+            <li class="skill-item">Python</li><li class="skill-item">Generative AI</li>
+            <li class="skill-item">Agentic AI</li><li class="skill-item">LLM Fundamentals</li>
+            <li class="skill-item">Prompt Engineering</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <div class="skill-cat-title">Tools & Platforms</div>
+          <ul class="skill-list">
+            <li class="skill-item">Excel</li><li class="skill-item">Google Workspace</li>
+            <li class="skill-item">Reels / Shorts</li><li class="skill-item">Digital Documentation</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <div class="skill-cat-title">Teaching & Training</div>
+          <ul class="skill-list">
+            <li class="skill-item">Curriculum Design</li><li class="skill-item">Workshop Facilitation</li>
+            <li class="skill-item">Mentoring</li><li class="skill-item">Community Training</li>
+          </ul>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<!-- ── WORKSHOPS ── -->
+<section class="section section-alt" id="workshops">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Training</div>
+      <h2 class="section-title">Workshop <span>Programs</span></h2>
+      <p class="section-sub">Hands-on workshops for colleges, government employees, and community groups.</p>
+    </div>
+    {% if workshops %}
+      <div class="workshops-grid">
+        {% for w in workshops %}
+        <div class="workshop-card">
+          <div class="workshop-title">{{ w.title }}</div>
+          <div class="workshop-meta">
+            <span>⏱ {{ w.duration }}</span>
+            <span>👥 {{ w.audience }}</span>
+          </div>
+          <p class="workshop-desc">{{ w.description }}</p>
+          <ul class="workshop-topics">
+            {% for topic in w.topic_list %}
+              <li>{{ topic }}</li>
+            {% endfor %}
+          </ul>
+          <div class="workshop-price">{{ w.price_range }}</div>
+        </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="workshops-grid">
+        <div class="workshop-card">
+          <div class="workshop-title">Embedded Systems Fundamentals</div>
+          <div class="workshop-meta"><span>⏱ 1 Day</span><span>👥 Engineering Students</span></div>
+          <p class="workshop-desc">Hands-on intro to microcontrollers, sensors, and real-world hardware projects.</p>
+          <ul class="workshop-topics">
+            <li>Arduino & ESP32 basics</li><li>Sensor integration</li>
+            <li>Build a working prototype</li><li>Troubleshooting & debugging</li>
+          </ul>
+          <div class="workshop-price">₹800–1000 per head</div>
+        </div>
+        <div class="workshop-card">
+          <div class="workshop-title">AI with Hardware</div>
+          <div class="workshop-meta"><span>⏱ 1 Day</span><span>👥 Tech Students</span></div>
+          <p class="workshop-desc">Connect AI concepts to physical hardware using Raspberry Pi and Jetson Nano.</p>
+          <ul class="workshop-topics">
+            <li>Raspberry Pi + Python AI</li><li>Edge AI on Jetson Nano</li>
+            <li>Computer vision basics</li><li>Agentic AI intro</li>
+          </ul>
+          <div class="workshop-price">₹1000–1500 per head</div>
+        </div>
+        <div class="workshop-card">
+          <div class="workshop-title">AI for the Workforce</div>
+          <div class="workshop-meta"><span>⏱ Half Day</span><span>👥 Government Employees</span></div>
+          <p class="workshop-desc">Practical AI fluency for non-technical professionals — tools, applications, and readiness.</p>
+          <ul class="workshop-topics">
+            <li>What AI actually does</li><li>Tools you can use today</li>
+            <li>AI in your workflow</li><li>What's coming next</li>
+          </ul>
+          <div class="workshop-price">₹1000–1500 per head</div>
+        </div>
+      </div>
+    {% endif %}
+    <div style="text-align:center; margin-top:40px;">
+      <a href="{% url 'contact' %}" class="btn btn-primary">Book a Workshop</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── BLOG ── -->
+{% if recent_posts %}
+<section class="section" id="blog">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Writing</div>
+      <h2 class="section-title">Latest <span>Articles</span></h2>
+    </div>
+    <div class="blog-grid">
+      {% for post in recent_posts %}
+      <div class="blog-card">
+        <div class="blog-cover">📝</div>
+        <div class="blog-body">
+          <div class="blog-date">{{ post.created_at|date:"d M Y" }}</div>
+          <div class="blog-title">{{ post.title }}</div>
+          <p class="blog-excerpt">{{ post.excerpt }}</p>
+          <a href="{% url 'blog_detail' post.slug %}" class="read-more">Read More →</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div style="text-align:center; margin-top:40px;">
+      <a href="{% url 'blog' %}" class="btn btn-outline">All Articles</a>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- ── TESTIMONIALS ── -->
+{% if testimonials %}
+<section class="section section-alt" id="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Social Proof</div>
+      <h2 class="section-title">What People <span>Say</span></h2>
+    </div>
+    <div class="testimonials-grid">
+      {% for t in testimonials %}
+      <div class="testimonial-card">
+        <p class="testimonial-quote">{{ t.quote }}</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">{{ t.name|first }}</div>
+          <div>
+            <div class="testimonial-name">{{ t.name }}</div>
+            <div class="testimonial-role">{{ t.role }}</div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- ── CTA ── -->
+<section class="cta-banner">
+  <div class="container">
+    <h2>Ready to bring hands-on tech education to your institution?</h2>
+    <p>Workshops for colleges, government bodies, and community groups across Chhattisgarh.</p>
+    <a href="{% url 'contact' %}" class="btn btn-white">Let's Talk</a>
+  </div>
+</section>
+
+{% endblock %}
