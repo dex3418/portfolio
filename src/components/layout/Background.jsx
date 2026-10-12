@@ -45,8 +45,8 @@ function combine(hand, extra) {
   return { viewBox: hand.viewBox, traces: [...hand.traces, ...extra.traces], nodes: [...hand.nodes, ...extra.nodes] }
 }
 
-const WIDE = combine(WIDE_HAND, makeTraces({ seed: 7, w: 1200, h: 900, count: 40 }))
-const TALL = combine(TALL_HAND, makeTraces({ seed: 11, w: 400, h: 800, count: 34 }))
+const WIDE = combine(WIDE_HAND, makeTraces({ seed: 7, w: 1200, h: 900, count: 16 }))
+const TALL = combine(TALL_HAND, makeTraces({ seed: 11, w: 400, h: 800, count: 13 }))
 
 export default function Background() {
   return (

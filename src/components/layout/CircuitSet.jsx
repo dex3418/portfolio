@@ -1,4 +1,10 @@
 // One set of loose circuit traces plus a travelling pulse of green "current" on each.
+// Speeds are mixed: a third fast, a third medium, a third slow.
+function speed(i) {
+  if (i % 3 === 0) return (2 + ((i * 0.37) % 1.4)).toFixed(1)
+  if (i % 3 === 1) return (5 + ((i * 0.9) % 2.5)).toFixed(1)
+  return (11 + ((i * 1.3) % 5)).toFixed(1)
+}
 
 export default function CircuitSet({ className, viewBox, traces, nodes }) {
   return (
@@ -11,7 +17,7 @@ export default function CircuitSet({ className, viewBox, traces, nodes }) {
       </g>
       <g fill="none" strokeLinecap="round" strokeLinejoin="round">
         {traces.map((d, i) => {
-          const timing = { animationDuration: `${4 + ((i * 1.7) % 4)}s`, animationDelay: `-${(i * 2.3) % 7}s`, stroke: "var(--vouchr-green)" }
+          const timing = { animationDuration: `${speed(i)}s`, animationDelay: `-${(i * 2.3) % 7}s`, stroke: "var(--vouchr-green)" }
           return (
             <g key={i}>
               {i % 2 === 0 && <path d={d} pathLength="100" className="bg__pulse bg__pulse--halo" style={timing} />}
