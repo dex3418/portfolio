@@ -28,7 +28,7 @@
 
 /* Article */
 .article { max-width: 720px; margin: 0 auto; }
-.article__title { font-size: clamp(1.8rem, 4.5vw, 2.6rem); line-height: 1.15; letter-spacing: -0.02em; margin: 8px 0 24px; }
+.article__title { font-size: clamp(1.6rem, 4.2vw, 2.3rem); line-height: 1.2; margin: 8px 0 24px; }
 .article__cover { width: 100%; border-radius: var(--radius); margin-bottom: 28px; }
 .prose { font-size: 1.02rem; line-height: 1.75; }
 .prose p, .prose ul, .prose ol { margin: 0 0 1.2em; }

@@ -5,9 +5,14 @@ export const hero = {
   lead: "Founder of Novaforge Labs and Vouchr. Teaching AI and embedded systems by building, and connecting skilled people in Dantewada, Sukma and Bijapur with real work.",
 }
 
-export const status = [
-  { label: "novaforge", text: "Hands-on AI and embedded systems education", color: "var(--cyan)" },
-  { label: "vouchr", text: "Talent and jobs network, live", color: "var(--vouchr-green)" },
+export const terminal = [
+  { prompt: true, text: "whoami" },
+  { text: "Devashish Markam" },
+  { prompt: true, text: "cat roles.txt" },
+  { text: "Founder, Novaforge Labs" },
+  { text: "Founder, Vouchr" },
+  { prompt: true, text: "ls explore/" },
+  { text: "services/  projects/  articles/  team/  resume/" },
 ]
 
 export const ventures = [
