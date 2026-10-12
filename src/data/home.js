@@ -28,7 +28,9 @@ export const ventures = [
 export const sections = [
   { to: "/services", title: "Services", text: "What I can build or teach for you." },
   { to: "/projects", title: "Projects", text: "Things shipped and in progress." },
+  { to: "/initiatives", title: "Initiatives", text: "Work beyond the day job." },
   { to: "/articles", title: "Articles", text: "Notes and posts from the work." },
   { to: "/team", title: "Team", text: "The people building alongside me." },
   { to: "/resume", title: "Resume", text: "Experience, education and skills." },
+  { to: "/links", title: "Links", text: "Tools and resources I recommend." },
 ]

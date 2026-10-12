@@ -6,9 +6,11 @@ const LINKS = [
   { to: "/", label: "Home" },
   { to: "/services", label: "Services" },
   { to: "/projects", label: "Projects" },
+  { to: "/initiatives", label: "Initiatives" },
   { to: "/articles", label: "Articles" },
   { to: "/team", label: "Team" },
   { to: "/resume", label: "Resume" },
+  { to: "/links", label: "Links" },
 ]
 
 export default function Navbar() {
