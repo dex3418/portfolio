@@ -1,7 +1,13 @@
 /* Background */
 .bg { position: fixed; inset: 0; z-index: -1; overflow: hidden; background: linear-gradient(170deg, var(--bg-deep) 0%, var(--bg-mid) 100%); }
 .bg__glow { position: absolute; width: 520px; height: 520px; border-radius: 50%; background: var(--cyan); filter: blur(140px); opacity: 0.10; top: -200px; right: -160px; }
-.bg__traces { position: absolute; inset: 0; width: 100%; height: 100%; color: var(--slate); opacity: 0.32; }
+.bg__traces { position: absolute; inset: 0; width: 100%; height: 100%; color: var(--slate); }
+.bg__base { opacity: 0.32; }
+
+/* Current: a short bright dash that runs along each trace, then rests before the next run */
+.bg__pulse { stroke-dasharray: 5 95; opacity: 0.9; animation: current linear infinite; }
+@keyframes current { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -100; } }
+@media (prefers-reduced-motion: reduce) { .bg__pulse { display: none; } }
 
 /* Shell */
 .shell { min-height: 100vh; display: flex; flex-direction: column; }
