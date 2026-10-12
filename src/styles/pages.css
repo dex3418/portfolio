@@ -1,4 +1,5 @@
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; }
+@media (min-width: 1200px) { .grid { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 22px; } }
 
 /* Shared card parts */
 .card { display: block; padding: 22px; }

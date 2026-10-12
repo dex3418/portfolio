@@ -16,7 +16,7 @@ const LINKS = [
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   return (
-    <nav className="nav glass" aria-label="Main">
+    <nav className="nav glass glass--blur" aria-label="Main">
       <NavLink to="/" className="nav__brand" onClick={() => setOpen(false)}>
         dev<span>.</span>
       </NavLink>
