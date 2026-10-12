@@ -2,10 +2,17 @@
 .bg { position: fixed; inset: 0; z-index: -1; overflow: hidden; background: linear-gradient(170deg, var(--bg-deep) 0%, var(--bg-mid) 100%); }
 .bg__glow { position: absolute; width: 520px; height: 520px; border-radius: 50%; background: var(--cyan); filter: blur(140px); opacity: 0.10; top: -200px; right: -160px; }
 .bg__traces { position: absolute; inset: 0; width: 100%; height: 100%; color: var(--slate); }
+.bg__traces--tall { display: none; }
+@media (orientation: portrait) {
+  .bg__traces--wide { display: none; }
+  .bg__traces--tall { display: block; }
+}
 .bg__base { opacity: 0.32; }
 
-/* Current: a short bright dash that runs along each trace, then rests before the next run */
-.bg__pulse { stroke-dasharray: 5 95; opacity: 0.9; animation: current linear infinite; }
+/* Current: a short bright dash that runs along each trace, with a soft halo */
+.bg__pulse { stroke-dasharray: 7 93; animation: current linear infinite; }
+.bg__pulse--core { stroke-width: 2.4; opacity: 0.95; }
+.bg__pulse--halo { stroke-width: 8; opacity: 0.18; }
 @keyframes current { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -100; } }
 @media (prefers-reduced-motion: reduce) { .bg__pulse { display: none; } }
 
