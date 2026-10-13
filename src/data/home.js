@@ -19,7 +19,7 @@ export const ventures = [
   {
     name: "Novaforge Labs",
     text: "Practical AI, embedded systems and agentic AI training for polytechnic and tier-3 college students.",
-    href: "https://nova-forge-labs.vercel.app",
+    href: "https://nflabsite.vercel.app",
     accent: "var(--cyan)",
   },
   {
