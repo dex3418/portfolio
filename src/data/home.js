@@ -19,7 +19,7 @@ export const ventures = [
   {
     name: "Novaforge Labs",
     text: "Practical AI, embedded systems and agentic AI training for polytechnic and tier-3 college students.",
-    href: "https://nflabsite.vercel.app",
+    href: "https://nova-forge-labs.vercel.app",
     accent: "var(--cyan)",
   },
   {
@@ -30,12 +30,10 @@ export const ventures = [
   },
 ]
 
-export const sections = [
-  { to: "/services", title: "Services", text: "What I can build or teach for you." },
-  { to: "/projects", title: "Projects", text: "Things shipped and in progress." },
-  { to: "/initiatives", title: "Initiatives", text: "Work beyond the day job." },
-  { to: "/articles", title: "Articles", text: "Notes and posts from the work." },
-  { to: "/team", title: "Team", text: "The people building alongside me." },
-  { to: "/resume", title: "Resume", text: "Experience, education and skills." },
-  { to: "/links", title: "Links", text: "Tools and resources I recommend." },
+// Pages that live under "More" in the navbar, shown at the bottom of Home.
+export const more = [
+  { to: "/initiatives", label: "initiatives/" },
+  { to: "/team", label: "team/" },
+  { to: "/resume", label: "resume/" },
+  { to: "/links", label: "links/" },
 ]

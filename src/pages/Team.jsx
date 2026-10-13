@@ -7,13 +7,11 @@ export default function Team() {
   const { data, loading, error } = useNotion("/api/team")
   return (
     <>
-      <PageHeader title="Team" text="The people building alongside me." />
+      <PageHeader path="team" title="Team" text="The people building alongside me." />
       <StateMessage loading={loading} error={error} empty={data && data.length === 0} emptyText="No team members published yet." />
       {data && data.length > 0 && (
         <div className="grid">
-          {data.map((item) => (
-            <TeamCard key={item.id} {...item} />
-          ))}
+          {data.map((m) => <TeamCard key={m.id} {...m} />)}
         </div>
       )}
     </>

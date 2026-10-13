@@ -5,16 +5,13 @@ import { useNotion } from "../data/useNotion.js"
 
 export default function Projects() {
   const { data, loading, error } = useNotion("/api/projects")
-
   return (
     <>
-      <PageHeader title="Projects" text="Things shipped and in progress." />
+      <PageHeader path="projects" title="Projects" text="Things shipped and in progress." />
       <StateMessage loading={loading} error={error} empty={data && data.length === 0} emptyText="No projects published yet." />
       {data && data.length > 0 && (
         <div className="projects">
-          {data.map((p) => (
-            <ProjectCard key={p.id} {...p} />
-          ))}
+          {data.map((p, i) => <ProjectCard key={p.id} {...p} featured={i === 0 && data.length > 2} />)}
         </div>
       )}
     </>

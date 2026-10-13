@@ -11,7 +11,7 @@ export default function Resume() {
 
   return (
     <>
-      <PageHeader title="Resume" text="Experience, education and skills." />
+      <PageHeader path="resume" title="Resume" text="Experience, education and skills." />
       <StateMessage loading={loading} error={error} empty={data && data.length === 0} emptyText="No resume entries published yet." />
       {groups.map((g) => (
         <ResumeSection key={g.name} name={g.name} items={g.items} />
