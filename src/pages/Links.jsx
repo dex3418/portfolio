@@ -1,6 +1,10 @@
 import PageHeader from "../components/ui/PageHeader.jsx"
 import StateMessage from "../components/ui/StateMessage.jsx"
 import Prompt from "../components/ui/Prompt.jsx"
+import PageLayout from "../components/layout/PageLayout.jsx"
+import { Aside, AsideSection } from "../components/ui/Aside.jsx"
+import AnchorIndex from "../components/ui/AnchorIndex.jsx"
+import SocialLinks from "../components/ui/SocialLinks.jsx"
 import LinkCard from "../components/links/LinkCard.jsx"
 import { useNotion } from "../data/useNotion.js"
 
@@ -14,18 +18,34 @@ export default function Links() {
     if (!g) groups.push((g = { name, items: [] }))
     g.items.push(l)
   })
+
+  const aside = (
+    <Aside mobile={groups.length > 1}>
+      {groups.length > 1 && (
+        <AsideSection title="Categories">
+          <AnchorIndex items={groups.map((g) => ({ id: `links-${g.name.toLowerCase()}`, label: g.name }))} />
+        </AsideSection>
+      )}
+      <AsideSection title="Elsewhere" extra>
+        <SocialLinks />
+      </AsideSection>
+    </Aside>
+  )
+
   return (
     <>
       <PageHeader path="links" title="Links" text="Tools and resources I use and recommend. Some are affiliate links." />
-      <StateMessage loading={loading} error={error} empty={data && data.length === 0} emptyText="No links published yet." />
-      {groups.map((g) => (
-        <section className="block" key={g.name}>
-          <Prompt path={`links/${g.name.toLowerCase()}`} />
-          <div className="grid grid--compact">
-            {g.items.map((l) => <LinkCard key={l.id} {...l} />)}
-          </div>
-        </section>
-      ))}
+      <PageLayout aside={aside}>
+        <StateMessage loading={loading} error={error} empty={data && data.length === 0} emptyText="No links published yet." />
+        {groups.map((g) => (
+          <section className="block links__group" id={`links-${g.name.toLowerCase()}`} key={g.name}>
+            <Prompt path={`links/${g.name.toLowerCase()}`} />
+            <div className="grid grid--compact">
+              {g.items.map((l) => <LinkCard key={l.id} {...l} />)}
+            </div>
+          </section>
+        ))}
+      </PageLayout>
     </>
   )
 }

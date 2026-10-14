@@ -97,3 +97,5 @@
 .tl__title { margin: 0; font-size: 1.1rem; }
 .tl__org { margin: 2px 0 0; color: var(--text-dim); font-size: 0.93rem; }
 .tl__text { margin: 8px 0 0; color: var(--text-dim); font-size: 0.93rem; max-width: 70ch; }
+
+.tl, .links__group { scroll-margin-top: calc(var(--nav-h) + 28px); }

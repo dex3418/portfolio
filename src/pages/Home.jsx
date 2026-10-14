@@ -1,4 +1,5 @@
 import Hero from "../components/home/Hero.jsx"
+import Statement from "../components/home/Statement.jsx"
 import VentureSplit from "../components/home/VentureSplit.jsx"
 import HomeProjects from "../components/home/HomeProjects.jsx"
 import HomeServices from "../components/home/HomeServices.jsx"
@@ -9,6 +10,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <Statement />
       <VentureSplit />
       <HomeProjects />
       <HomeServices />

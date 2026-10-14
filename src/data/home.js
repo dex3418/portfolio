@@ -1,5 +1,6 @@
 // Home page content. Later this will be replaced by data from Notion.
 export const hero = {
+  role: "Founder, Novaforge Labs and Vouchr",
   name: "Devashish Markam",
   headline: "I build hands-on tech education and local talent networks.",
   lead: "Founder of Novaforge Labs and Vouchr. Teaching AI and embedded systems by building, and connecting skilled people in Dantewada, Sukma and Bijapur with real work.",
@@ -11,6 +12,8 @@ export const terminal = [
   { prompt: true, text: "cat roles.txt" },
   { text: "Founder, Novaforge Labs" },
   { text: "Founder, Vouchr" },
+  { prompt: true, text: "ls ventures/" },
+  { text: "novaforge-labs/  vouchr/" },
   { prompt: true, text: "ls explore/" },
   { text: "services/  projects/  articles/  team/  resume/" },
 ]

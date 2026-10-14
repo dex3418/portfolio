@@ -54,7 +54,7 @@
 }
 
 /* Footer */
-.footer { max-width: var(--max); width: 100%; margin: 0 auto; padding: 24px 20px calc(24px + env(safe-area-inset-bottom, 0px)); color: var(--text-dim); font-size: 0.82rem; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; border-top: 1px solid var(--glass-border); }
+.footer { max-width: var(--max); width: 100%; margin: 0 auto; padding: 24px 20px calc(24px + env(safe-area-inset-bottom, 0px)); color: var(--text-dim); font-size: 0.82rem; display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; border-top: 1px solid var(--glass-border); }
 .footer__mono { font-family: var(--mono); }
 
 .accent-line { height: 2px; border: 0; border-radius: 2px; background: var(--vouchr-gradient); opacity: 0.8; }

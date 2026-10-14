@@ -33,3 +33,28 @@
 @media (max-width: 720px) {
   .row-item, .row-item--article { grid-template-columns: 1fr; gap: 6px; padding: 18px 20px; }
 }
+
+/* Social links */
+.socials { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.socials a { display: inline-block; font-family: var(--mono); font-size: 0.78rem; color: var(--text-dim); padding: 6px 12px; border: 1px solid var(--glass-border); border-radius: 999px; transition: color 0.2s, border-color 0.2s; }
+.socials a:hover { color: var(--cyan); border-color: var(--cyan); }
+
+/* Page layout with a side panel */
+.with-aside { display: grid; grid-template-columns: minmax(0, 1fr) 270px; gap: 32px; align-items: start; }
+.with-aside__main { min-width: 0; }
+.aside { position: sticky; top: calc(var(--nav-h) + 28px); padding: 20px; display: grid; gap: 24px; }
+.aside__title { margin: 0 0 10px; font-family: var(--mono); font-size: 0.78rem; font-weight: 400; color: var(--text-dim); }
+.filterlist, .aside__links { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.filterlist button, .aside__links a { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 8px; font: inherit; font-size: 0.92rem; color: var(--text-dim); background: none; border: 0; border-radius: 8px; padding: 9px 12px; cursor: pointer; text-align: left; transition: background 0.2s, color 0.2s; }
+.filterlist button:hover, .aside__links a:hover { background: var(--glass-strong); color: var(--text); }
+.filterlist button[aria-pressed="true"] { background: rgba(0, 194, 255, 0.10); color: var(--cyan); }
+.filterlist__count { font-family: var(--mono); font-size: 0.78rem; }
+.aside .socials a { font-size: 0.74rem; }
+
+@media (max-width: 900px) {
+  .with-aside { grid-template-columns: 1fr; gap: 20px; }
+  .aside { position: static; order: -1; padding: 12px; }
+  .aside--desktop, .aside__section--extra, .aside__title { display: none; }
+  .filterlist, .aside__links { display: flex; flex-wrap: wrap; gap: 8px; }
+  .filterlist button, .aside__links a { width: auto; border: 1px solid var(--glass-border); border-radius: 999px; padding: 7px 14px; }
+}

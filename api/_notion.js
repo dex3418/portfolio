@@ -9,6 +9,7 @@ export const DB = {
   initiatives: "1172598e87c540beb20cce5c5fe5b553",
   links: "46570268469f425e824f80d86c3355cc",
   resume: "002b7e170961446f8cd592e986d34db9",
+  socials: "2024382e88834b95a3952b9e7455865b",
 }
 
 async function call(path, method, body) {

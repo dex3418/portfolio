@@ -4,7 +4,7 @@ import { monthYear } from "../../data/format.js"
 // Entries hang off one vertical line, like parts on a bus.
 export default function ResumeSection({ name, items }) {
   return (
-    <section className="tl">
+    <section className="tl" id={`resume-${name.toLowerCase()}`}>
       <Prompt path={`resume/${name.toLowerCase()}`} />
       <ol className="tl__list">
         {items.map((it) => {
