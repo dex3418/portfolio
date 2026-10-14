@@ -1,3 +1,4 @@
+import Seo from "../components/seo/Seo.jsx"
 import { useState } from "react"
 import PageHeader from "../components/ui/PageHeader.jsx"
 import StateMessage from "../components/ui/StateMessage.jsx"
@@ -38,6 +39,7 @@ export default function Projects() {
 
   return (
     <>
+      <Seo title="Projects" description="Projects by Devashish Markam, a grassroots builder in Dantewada, Chhattisgarh, including Vouchr and Novaforge Labs." />
       <PageHeader path="projects" title="Projects" text="Things shipped and in progress." />
       <PageLayout aside={aside}>
         <StateMessage loading={loading} error={error} empty={data && data.length === 0} emptyText="No projects published yet." />

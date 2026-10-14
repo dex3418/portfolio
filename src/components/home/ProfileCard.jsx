@@ -10,6 +10,7 @@ export default function ProfileCard() {
         <div>
           <h2 className="id__name">{hero.name}</h2>
           <p className="id__role">{hero.role}</p>
+          <p className="id__place">{hero.place}</p>
         </div>
       </div>
       <SocialLinks />

@@ -1,3 +1,4 @@
+import Seo from "../components/seo/Seo.jsx"
 import PageHeader from "../components/ui/PageHeader.jsx"
 import StateMessage from "../components/ui/StateMessage.jsx"
 import Prompt from "../components/ui/Prompt.jsx"
@@ -34,6 +35,7 @@ export default function Links() {
 
   return (
     <>
+      <Seo title="Links" description="Tools and resources recommended by Devashish Markam. Some are affiliate links." />
       <PageHeader path="links" title="Links" text="Tools and resources I use and recommend. Some are affiliate links." />
       <PageLayout aside={aside}>
         <StateMessage loading={loading} error={error} empty={data && data.length === 0} emptyText="No links published yet." />

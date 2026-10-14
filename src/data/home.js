@@ -2,8 +2,9 @@
 export const hero = {
   role: "Founder, Novaforge Labs and Vouchr",
   name: "Devashish Markam",
-  headline: "I build hands-on tech education and local talent networks.",
-  lead: "Founder of Novaforge Labs and Vouchr. Teaching AI and embedded systems by building, and connecting skilled people in Dantewada, Sukma and Bijapur with real work.",
+  headline: "Building technology and opportunity from the ground up in Dantewada.",
+  lead: "I am Devashish Markam, a founder from Dantewada, Chhattisgarh. Through Novaforge Labs I teach AI and embedded systems by building, and through Vouchr I connect skilled people in Dantewada, Sukma and Bijapur with real work.",
+  place: "Dantewada, Chhattisgarh",
 }
 
 export const terminal = [
@@ -12,6 +13,8 @@ export const terminal = [
   { prompt: true, text: "cat roles.txt" },
   { text: "Founder, Novaforge Labs" },
   { text: "Founder, Vouchr" },
+  { prompt: true, text: "cat location.txt" },
+  { text: "Dantewada, Chhattisgarh" },
   { prompt: true, text: "ls ventures/" },
   { text: "novaforge-labs/  vouchr/" },
   { prompt: true, text: "ls explore/" },
@@ -22,7 +25,7 @@ export const ventures = [
   {
     name: "Novaforge Labs",
     text: "Practical AI, embedded systems and agentic AI training for polytechnic and tier-3 college students.",
-    href: "https://nova-forge-labs.vercel.app",
+    href: "https://nflabsite.vercel.app",
     accent: "var(--cyan)",
   },
   {

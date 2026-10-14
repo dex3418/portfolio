@@ -1,3 +1,4 @@
+import Seo from "../components/seo/Seo.jsx"
 import { useState } from "react"
 import PageHeader from "../components/ui/PageHeader.jsx"
 import StateMessage from "../components/ui/StateMessage.jsx"
@@ -36,6 +37,7 @@ export default function Articles() {
 
   return (
     <>
+      <Seo title="Articles" description="Articles and notes from Devashish Markam on hands-on tech education and local talent in Dantewada, Chhattisgarh." />
       <PageHeader path="articles" title="Articles" text="Notes and posts from the work." />
       <PageLayout aside={aside}>
         <StateMessage loading={loading} error={error} empty={data && data.length === 0} emptyText="No articles published yet." />
