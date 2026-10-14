@@ -13,10 +13,13 @@
 .id__role { margin: 4px 0 0; color: var(--text-dim); font-size: 0.9rem; }
 .id__place { margin: 6px 0 0; font-family: var(--mono); font-size: 0.78rem; color: var(--vouchr-green); }
 .avatar-wrap { position: relative; width: 100%; }
-.avatar-wrap::before, .avatar-wrap::after { content: ""; position: absolute; width: 22px; height: 22px; border: 2px solid var(--cyan); pointer-events: none; }
-.avatar-wrap::before { top: -7px; left: -7px; border-right: 0; border-bottom: 0; border-top-left-radius: 6px; }
-.avatar-wrap::after { bottom: -7px; right: -7px; border-left: 0; border-top: 0; border-bottom-right-radius: 6px; }
-.avatar { width: 100%; aspect-ratio: 1; border-radius: var(--radius-sm); overflow: hidden; background: var(--glass-strong); }
+.avatar-wrap::before, .avatar-wrap::after { content: ""; position: absolute; width: 22px; height: 22px; border: 2px solid var(--cyan); pointer-events: none; animation: lockon 0.9s cubic-bezier(0.2, 0.9, 0.2, 1) 0.3s both; }
+.avatar-wrap::before { top: -7px; left: -7px; border-right: 0; border-bottom: 0; border-top-left-radius: 6px; --dx: -30px; --dy: -30px; }
+.avatar-wrap::after { bottom: -7px; right: -7px; border-left: 0; border-top: 0; border-bottom-right-radius: 6px; --dx: 30px; --dy: 30px; }
+/* Lock-on: the corner brackets close in on the photo once, then stay put */
+@keyframes lockon { 0% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(1.7); } 60% { opacity: 1; } 100% { opacity: 1; transform: none; } }
+@keyframes lockflash { 0%, 70% { box-shadow: none; } 85% { box-shadow: 0 0 0 1px var(--cyan), 0 0 26px rgba(0, 194, 255, 0.35); } 100% { box-shadow: none; } }
+.avatar { width: 100%; aspect-ratio: 1; border-radius: var(--radius-sm); overflow: hidden; background: var(--glass-strong); animation: lockflash 1.6s ease-out 0.3s both; }
 .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .avatar__fallback { display: grid; place-items: center; width: 100%; height: 100%; font-family: var(--mono); font-size: 3.4rem; color: var(--cyan); }
 
