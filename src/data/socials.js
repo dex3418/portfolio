@@ -5,7 +5,7 @@ export const FALLBACK_SOCIALS = [
   { id: "pinterest", name: "Pinterest", url: "https://pin.it/475zd7PhW" },
   { id: "facebook", name: "Facebook", url: "https://www.facebook.com/share/1CJwqAygqT/" },
   { id: "github", name: "GitHub", url: "https://github.com/dex3418" },
-  { id: "novaforge", name: "Novaforge Labs", url: "https://vouchr-by-nflabs.vercel.app/" },
+  { id: "novaforge", name: "Novaforge Labs", url: "https://nflabsite.vercel.app/" },
 ]
 
 export const AVATAR_URL = "https://github.com/dex3418.png?size=480"

@@ -31,7 +31,7 @@ export const ventures = [
   {
     name: "Vouchr",
     text: "A hyperlocal network that connects job seekers, skill learners and businesses across Dantewada, Sukma and Bijapur.",
-    href: "https://vouchr-dun.vercel.app",
+    href: "https://vouchr-by-nflabs.vercel.app/",
     accent: "var(--vouchr-gradient)",
   },
 ]
